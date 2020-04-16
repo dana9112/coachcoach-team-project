@@ -6,27 +6,34 @@ import java.sql.Date;
 public class ToDoList implements Serializable {
   private static final long serialVersionUID = 1L;
 
-  int to_do_list_no;
-  int member_no;
+  int toDoListNo;
+  int memberNo;
   String memo;
-  Date create_date;
+  Date createDate;
 
 
-
-  public int getTo_do_list_no() {
-    return to_do_list_no;
+  @Override
+  public String toString() {
+    return "ToDoList [toDoListNo=" + toDoListNo + ", memberNo=" + memberNo + ", memo=" + memo
+        + ", createDate=" + createDate + "]";
   }
 
-  public void setTo_do_list_no(int to_do_list_no) {
-    this.to_do_list_no = to_do_list_no;
+
+  public int getToDoListNo() {
+    return toDoListNo;
   }
 
-  public int getMember_no() {
-    return member_no;
+
+  public void setToDoListNo(int toDoListNo) {
+    this.toDoListNo = toDoListNo;
   }
 
-  public void setMember_no(int member_no) {
-    this.member_no = member_no;
+  public int getMemberNo() {
+    return memberNo;
+  }
+
+  public void setMemberNo(int memberNo) {
+    this.memberNo = memberNo;
   }
 
   public String getMemo() {
@@ -37,30 +44,24 @@ public class ToDoList implements Serializable {
     this.memo = memo;
   }
 
-  public Date getCreate_date() {
-    return create_date;
+  public Date getCreateDate() {
+    return createDate;
   }
 
-  public void setCreate_date(Date create_date) {
-    this.create_date = create_date;
+  public void setCreateDate(Date createDate) {
+    this.createDate = createDate;
   }
 
-
-  @Override
-  public String toString() {
-    return "ToDoList [to_do_list_no=" + to_do_list_no + ", member_no=" + member_no + ", memo="
-        + memo + ", create_date=" + create_date + "]";
-  }
 
 
   @Override
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((create_date == null) ? 0 : create_date.hashCode());
-    result = prime * result + member_no;
+    result = prime * result + ((createDate == null) ? 0 : createDate.hashCode());
+    result = prime * result + memberNo;
     result = prime * result + ((memo == null) ? 0 : memo.hashCode());
-    result = prime * result + to_do_list_no;
+    result = prime * result + toDoListNo;
     return result;
   }
 
@@ -73,19 +74,19 @@ public class ToDoList implements Serializable {
     if (getClass() != obj.getClass())
       return false;
     ToDoList other = (ToDoList) obj;
-    if (create_date == null) {
-      if (other.create_date != null)
+    if (createDate == null) {
+      if (other.createDate != null)
         return false;
-    } else if (!create_date.equals(other.create_date))
+    } else if (!createDate.equals(other.createDate))
       return false;
-    if (member_no != other.member_no)
+    if (memberNo != other.memberNo)
       return false;
     if (memo == null) {
       if (other.memo != null)
         return false;
     } else if (!memo.equals(other.memo))
       return false;
-    if (to_do_list_no != other.to_do_list_no)
+    if (toDoListNo != other.toDoListNo)
       return false;
     return true;
   }
